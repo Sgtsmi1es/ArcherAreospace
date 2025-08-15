@@ -1,0 +1,138 @@
+# Argus - KSP Orbital Triad Deployment System (MVP Version)
+
+## Description
+
+Argus is a Kerbal Space Program mod that allows players to deploy a network of vessels in orbit around any celestial body for a cost in KSP funds. This mod provides a strategic way to establish orbital infrastructure and surveillance networks throughout the Kerbol system.
+
+**This is an MVP (Minimum Viable Product) build for testing purposes.**
+
+## Features (MVP Version)
+
+- **Toolbar Button**: Appears in the KSP Tracking Station
+- **Test Window**: Simple window with a test button for functionality testing
+- **Basic Integration**: Minimal KSP mod integration for testing
+
+## Installation
+
+### Prerequisites
+- Kerbal Space Program 1.12.0 or later
+- Module Manager (recommended for compatibility)
+
+### Installation Steps
+1. Download the latest release from the releases page
+2. Extract the contents to your KSP GameData folder
+3. Ensure the `Argus` folder is placed directly in `GameData/`
+4. Launch KSP and verify the mod is loaded in the main menu
+
+### File Structure
+```
+GameData/
+└── Argus/
+    ├── Argus.dll
+    ├── README.md
+    └── [other mod files]
+```
+
+## Usage (MVP Version)
+
+### Basic Operation
+1. **Launch KSP** and go to the Tracking Station
+2. **Click the "Argus" button** in the top-right corner of the screen
+3. **Test Window opens** with a "Test" button
+4. **Click "Test"** to test basic functionality
+5. **Check the console** for test output
+
+## Requirements
+
+### KSP Version
+- **Minimum**: 1.12.0
+- **Recommended**: 1.12.5 or later
+
+### Dependencies
+- **Required**: None
+- **Recommended**: Module Manager for enhanced compatibility
+
+
+
+## Configuration
+
+### Settings File
+The mod can be configured through the `Argus.cfg` file in the mod directory:
+- Cost multipliers
+- Orbital parameters
+- Deployment restrictions
+
+### In-Game Settings
+Access mod settings through:
+- Main Menu → Settings → Mod Settings → Argus
+- In-Flight → Mod Settings → Argus
+
+## Troubleshooting
+
+### Common Issues
+1. **Mod Not Loading**
+   - Verify installation in GameData folder
+   - Check KSP version compatibility
+   - Review KSP.log for error messages
+
+2. **Deployment Failures**
+   - Ensure sufficient funds in career mode
+   - Verify vessel availability
+   - Check target body accessibility
+
+3. **Performance Issues**
+   - Reduce graphics settings if experiencing lag
+   - Close other resource-intensive applications
+   - Consider using fewer simultaneous deployments
+
+### Log Files
+- Check `KSP.log` for detailed error information
+- Enable verbose logging in mod settings if needed
+
+## Development
+
+### Source Code
+- Source code available on GitHub
+- Contributions welcome through pull requests
+- Bug reports and feature requests via GitHub Issues
+
+### Building from Source
+1. Clone the repository
+2. Open solution in Visual Studio
+3. Build for Release configuration
+4. Copy output files to GameData/Argus/
+
+## Version History
+
+### v1.0.0-MVP (MVP Build)
+- Basic toolbar button in Tracking Station
+- Simple test window with test button
+- Minimal KSP integration for testing
+
+## License
+
+This mod is released under the MIT License. See LICENSE file for details.
+
+## Credits
+
+- **Original Development**: [Your Name/Team]
+- **KSP Community**: For inspiration and feedback
+- **Squad**: For creating Kerbal Space Program
+
+## Support
+
+### Getting Help
+- **GitHub Issues**: For bug reports and feature requests
+- **KSP Forums**: [Link to forum thread]
+- **Discord**: [Link to Discord server if applicable]
+
+### Contributing
+We welcome contributions! Please see CONTRIBUTING.md for guidelines.
+
+---
+
+**Note**: This mod is not affiliated with Squad or Take-Two Interactive. Kerbal Space Program is a trademark of Squad.
+
+**Disclaimer**: Use at your own risk. Always backup your save files before installing new mods.
+
+**MVP Status**: This is a minimal build for testing the basic mod structure. Full functionality will be added in future versions.

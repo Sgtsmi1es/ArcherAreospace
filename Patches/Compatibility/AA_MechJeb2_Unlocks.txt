@@ -1,0 +1,15 @@
+// Archer Aerospace: force MechJeb feature unlock mapping
+@PART[*]:HAS[@MODULE[MechJebCore]]:NEEDS[MechJeb2]:FINAL
+{
+  @MODULE[MechJebCore]
+  {
+    @MechJebLocalSettings
+    {
+      // Overwrite every MechJeb module's unlockTechs field to the Archer start node.
+      @MechJebModule*:HAS[#unlockTechs[*]]
+      {
+        @unlockTechs = AA_T0_Aircraft_FirstFlight
+      }
+    }
+  }
+}

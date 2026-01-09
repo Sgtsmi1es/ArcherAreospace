@@ -1,0 +1,170 @@
+# Archer Aerospace Naming Conventions
+
+This document defines the **canonical naming schema** used for all Archer Aerospace vehicles, stations, satellites, and probes.
+The goals are consistency, realism, and easy identification in-flight, in map view, and in the Tracking Station.
+
+---
+
+## 1. Aircraft (Jet Aircraft)
+
+### Design Name
+
+```
+Archer AreoJet – {NATO Phonetic}
+```
+
+### Vessel Name
+
+```
+AAJ-{Letter}-{Number}
+```
+
+### Rules
+
+* **Letter** = aircraft model/design
+* **Number** = sequential airframe count of that design
+
+### Examples
+
+* *Archer AreoJet – Alpha* → `AAJ-A-1`
+* *Archer AreoJet – Golf* → `AAJ-G-3`
+
+---
+
+## 2. Manned Spacecraft (CSM)
+
+### Design Name
+
+```
+Archer CSM – {NATO Phonetic}
+```
+
+### Vessel Name
+
+```
+ACSM-{Letter}-{MissionName}
+```
+
+### Rules
+
+* **Letter** = CSM model
+* **MissionName** = unique mission/callsign (Apollo-style)
+
+### Example
+
+* *Archer CSM – Bravo* → `ACSM-B-Gumdrop`
+
+---
+
+## 3. Stations
+
+### Design / Vessel Name
+
+```
+Archer Station – {NATO Phonetic} – {ModuleName}
+```
+
+### Operational Short Form
+
+```
+AS-{Letter}-{ModuleName}
+```
+
+### Rules
+
+* Stations are modular; each major module is named explicitly
+* Station prefix `AS` is **reserved** and not used by satellites
+
+### Example
+
+```
+AS-A-Habitation
+```
+
+---
+
+## 4. Satellites (KomSats)
+
+All satellites are standardized as **KomSats**, since every satellite includes relay capability by default.
+
+### Vessel Name Format
+
+```
+KS-{Version}-{TypeCode}-{Sequence}
+```
+
+### Version
+
+* Lettered generations: `A, B, C, D, …`
+* Represents **design revision**, not launch order
+
+### Type Codes
+
+| Code    | Meaning       |
+| ------- | ------------- |
+| `K`     | Relay         |
+| `RL`    | Radar Low     |
+| `RH`    | Radar High    |
+| `VL`    | Visual Low    |
+| `VH`    | Visual High   |
+| `Multi` | Multispectral |
+| `Res`   | Resource High |
+
+> Note: Resource Low scanning is implicitly covered by `Multi`.
+
+### Sequence
+
+* Incremented per **Version + TypeCode**
+
+### Examples
+
+* `KS-A-K-1` → First Gen-A relay KomSat
+* `KS-D-RH-3` → Third Gen-D Radar High KomSat
+
+---
+
+## 5. Science Probes
+
+### Vessel Name Format
+
+```
+SP-{Version}-{Destination}-{Sequence}
+```
+
+### Rules
+
+* **Version** = probe generation
+* **Destination** = target body
+* **Sequence** = launch count of that configuration
+
+### Example
+
+```
+SP-C-Mun-1
+```
+
+---
+
+## 6. Design Principles
+
+* No name collisions between craft classes
+* Human-readable during flight
+* Clean sorting in Tracking Station
+* Real-world aerospace inspired
+* Scales indefinitely for long saves and constellations
+
+---
+
+## 7. Reserved Prefixes Summary
+
+| Prefix | Usage                |
+| ------ | -------------------- |
+| `AAJ`  | Jet aircraft         |
+| `ACSM` | Manned spacecraft    |
+| `AS`   | Stations             |
+| `KS`   | Satellites (KomSats) |
+| `SP`   | Science probes       |
+
+---
+
+**This document represents the canonical Archer Aerospace naming standard.**

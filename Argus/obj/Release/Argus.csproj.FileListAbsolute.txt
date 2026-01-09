@@ -1,4 +1,0 @@
-C:\Users\Mleac\OneDrive\Documents\GitHub\ArcherAreospace\Argus\obj\Release\Argus.csproj.AssemblyReference.cache
-C:\Users\Mleac\OneDrive\Documents\GitHub\ArcherAreospace\Argus\obj\Release\Argus.csproj.CoreCompileInputs.cache
-C:\Users\Mleac\OneDrive\Documents\GitHub\ArcherAreospace\Argus\bin\Release\Argus.dll
-C:\Users\Mleac\OneDrive\Documents\GitHub\ArcherAreospace\Argus\obj\Release\Argus.dll

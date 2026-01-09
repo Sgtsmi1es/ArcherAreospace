@@ -1,0 +1,983 @@
+ARCHER AEROSPACE TECH TREE
+MASTER REFERENCE DOCUMENT
+Authoritative Implementation + Design Intent
+
+Last Updated: January 2026
+
+================================================================================
+
+MOD OVERVIEW
+================================================================================
+
+Archer Aerospace is a full replacement technology tree for Kerbal Space Program designed around capability-driven progression, historical inspiration, and player choice.
+
+Rather than a single linear unlock path, the tree is organized into parallel, independently investable branches. Core systems unlock early and complete early, while infrastructure-heavy and speculative systems are intentionally delayed or sparse.
+
+This project prioritizes:
+- Clarity over part spam
+- Capability unlocks over arbitrary gating
+- Long-term gameplay feel over strict historical simulation
+
+This is a personal, single-player mod and is not intended for public release or stock balance parity.
+
+================================================================================
+2. HIGH-LEVEL DESIGN GOALS
+
+Key goals guiding all tech tree decisions:
+
+- Aircraft-first progression, with aircraft remaining relevant into late game
+- A core, faction-agnostic rocketry spine that always advances
+- Optional crewed program overlays layered on top of the core
+- Support branches that unlock new mission capabilities, not raw scaling
+- Intentional late-game restraint (T9–T10 are sparse by design)
+
+================================================================================
+3. TECH ERA TIMELINE (ABSTRACTED)
+
+Tech tiers loosely correspond to real-world aerospace eras. These mappings are approximate and intentionally abstracted.
+
+T0 — Early Jet & Experimental Flight (1930s–1940s)
+	> Early jet engines, experimental aircraft, no spaceflight
+
+T1 — Postwar Aviation & Early Research (mid-1940s)
+	> Improved aircraft design, basic electronics, early science
+
+T2 — Sounding Rockets & Pre-Orbital Research (late 1940s–mid-1950s)
+	> Suborbital rockets, atmospheric research, early probes
+
+T2.5 — Sputnik Era (1957)
+	> First artificial satellites, minimal orbital capability
+
+T3 — Early Orbital Capability (late 1950s–early 1960s)
+	> Reliable orbit, early recovery systems
+
+T3.5 — Vostok Era (early 1960s)
+	> First human spaceflight, single-crew capsules
+
+T4 — Mercury / Early Space Operations (early–mid 1960s)
+	> Multi-orbit missions, docking foundations
+
+T4.5 — Voskhod & Early Probe Expansion (mid-1960s)
+	> EVA capability, early probe buses
+
+T5 — Gemini / Rendezvous & Deep Space (mid–late 1960s)
+	> Docking becomes routine, long-duration missions
+
+T5.5 — Soyuz / Operational Crewed Spaceflight (late 1960s–1970s)
+	> Standardized crew rotation and orbital operations
+
+T6 — Apollo / Heavy Lift Era (late 1960s–early 1970s)
+	> Lunar missions, very large launch vehicles
+
+T6.5 — Salyut / Early Space Stations (1970s–1980s)
+	> Long-duration habitation and orbital infrastructure
+
+T7 — Shuttle / Reusability Era (1980s–2010s)
+	> Large payload delivery, partial reusability
+
+T8 — ISS / Modern Orbital Infrastructure (1990s–Present)
+	> Sustained multinational orbital presence
+
+T9 — Near-Future Operations
+	> High autonomy, advanced guidance systems
+
+T10 — Speculative / Post-Real-World Technology
+	> Experimental propulsion and infrastructure (reserved)
+
+================================================================================
+4. BRANCH ARCHITECTURE OVERVIEW
+
+Branches fall into three functional categories:
+
+4.1 CORE SPINES (CONTINUOUS ADVANCEMENT)
+
+Aircraft Branch
+	Role: Atmospheric flight and spaceplane development
+	Completion: Reaches maturity by T8
+
+Archer Aerospace Rocketry (1.25m Core)
+	Role: General-purpose rocketry and orbital access
+	Completion: Advances continuously through T8
+
+
+These branches ensure forward progress regardless of playstyle.
+
+4.2 PROGRAM OVERLAYS (OPTIONAL CREWED PATHS)
+
+NASA Crewed Program
+	Role: Heavy lift, milestones, large-scale missions
+	Completion: Converges at T8
+
+Soviet Crewed Program
+	Role: Early crewed access, compact stations
+	Completion: Converges at T8
+
+
+Program overlays expand crewed options but never replace the core spine.
+
+4.3 SUPPORT & CAPABILITY BRANCHES
+
+Science
+Electrical (power generation only)
+Probe & Guidance
+Rovers & Ground Systems
+Structural (non-station)
+Recovery & Separation
+Solid Rocket Boosters
+Stations & Orbital Infrastructure
+
+
+These branches unlock what missions are possible, not how large vehicles are.
+
+================================================================================
+5. CORE DESIGN PHILOSOPHY (LOCKED)
+
+5.1 THREE PARALLEL ROCKETRY LINES
+
+Archer Aerospace (1.25m)
+	- Always available
+	- Faction-agnostic
+	- Backbone of progression
+
+Soviet Program (1.875m)
+	- Earlier crewed access
+	- Half-tier offsets
+	- Reduced node costs due to sparse parts
+
+NASA Program (2.5m–5m)
+	- Later start
+	- Heavy lift and milestone missions
+
+
+All three lines converge at T8 (ISS).
+
+5.2 NODE NAMING SCHEMA
+
+AA_T<Tier>_<Domain>_<Name>
+AA_T<Tier>_5_<Domain>_<Name>   (half tiers)
+
+
+Examples:
+AA_T3_Rocket_Small
+AA_T3_5_Rocket_Vostok
+AA_T6_5_Rocket_SalyutMir
+
+5.3 LATE-GAME RESTRAINT
+
+- Sparse nodes are intentional
+- Empty nodes are acceptable
+- The parking node (T99) is a feature, not a failure
+
+================================================================================
+6. AIRCRAFT PROGRESSION (IMPLEMENTED)
+
+Aircraft remain relevant throughout the entire game.
+
+T0 — First Flight
+	Early jet engines and basic airframes
+
+T1 — Aircraft Expansion
+	Wings, landing gear, early cockpits
+
+T2 — Aircraft Design
+	Control surfaces and aerodynamic refinement
+
+T3 — Subsonic Jets
+	Wheesley-class turbofans
+
+T4 — Supersonic Jets
+	Panther afterburning turbofans
+
+T5 — High Altitude Flight
+	Advanced intake systems
+
+T6 — Hypersonic Flight
+	Whiplash turbo-ramjets
+
+T7 — Heavy Lift Jets
+	Goliath turbofans
+
+T8 — Mk2 Spaceplanes
+	Orbital-capable aircraft systems
+
+RAPIER engines are reserved for T9–T10.
+
+================================================================================
+7. ROCKETRY STRUCTURE (IMPLEMENTED)
+
+7.1 ARCHER AEROSPACE CORE (1.25m)
+
+Sounding Rockets
+Small Rockets
+Orbital Rocketry
+Advanced Rocketry
+Heavy Rocketry
+Specialized Rocketry
+
+
+7.2 SOVIET PROGRAM (1.875m, HALF-TIERS)
+
+T2.5 — Fellow Traveler (Sputnik)
+T3.5 — Vostok
+T4.5 — Voskhod
+T5.5 — Soyuz
+T6.5 — Salyut-Mir
+T8 — ISS (convergence)
+
+
+Reduced node costs reflect intentionally sparse nodes.
+
+7.3 NASA PROGRAM (2.5m+)
+
+T4 — Mercury
+T4 — Docking
+T5 — Gemini
+T6 — Apollo
+T7 — Shuttle
+T8 — ISS (convergence)
+T8 — SLS
+
+================================================================================
+8. SUPPORT BRANCH STATUS
+Science
+	Status: Partially implemented
+	Notes: Early instruments placed; expansion planned
+
+Electrical (Generation Only)
+	Status: Partially implemented
+	Notes: Power generation by method; batteries handled in program/core nodes
+	Nodes:
+		T2 — Fixed Solar Foundations
+			AA_Node: AA_Elec_T2_FixedSolar
+		T3 — Early Orbital Power
+			AA_Node: AA_Elec_T3_OrbitalSolar
+		T4 — Advanced Fixed Generation
+			AA_Node: AA_Elec_T4_AdvancedFixed
+		T5 — Deployable Power Systems
+			AA_Node: AA_Elec_T5_DeployablePower
+		T6 — Nuclear Power Systems
+			AA_Node: AA_Elec_T6_Nuclear
+
+Probe & Guidance
+	Status: Implemented
+	Notes: OKTO → HECS → HECS2 → RC series
+
+Recovery & Separation
+	Status: Implemented
+	Notes: Graduated by vehicle diameter
+
+Solid Rocket Boosters
+	Status: Implemented
+	Notes: Dedicated T3–T6 line; specialty SRBs removed
+
+Rovers & Ground Systems
+	Status: Partially implemented
+	Notes: Mobility early; infrastructure deferred
+
+Stations & Orbital Infrastructure
+	Status: Implemented
+	Notes: ISS is first true long-duration infrastructure; includes Gigantor XL solar
+
+================================================================================
+9. TECH TREE COORDINATE SYSTEM (LOCKED)
+X-axis: Tier progression
+Y-axis: Branch lanes (inverted)
+Z-axis: Always 0
+
+Parking Node:
+	AA_T99_Parking
+	pos = -800,1199,0
+
+================================================================================
+10. MODULE MANAGER LOAD ORDER (CRITICAL)
+1. AA_Parts_PARKING.cfg
+	Uses :FOR[ArcherAerospace]
+	Assigns all parts to parking
+
+2. AA_Parts_T*.cfg
+	Uses :AFTER[ArcherAerospace]
+	Claims parts for specific tiers
+
+
+This guarantees deterministic behavior and prevents orphaned parts.
+
+================================================================================
+11. IMPLEMENTATION STATUS SUMMARY
+Aircraft T0–T8: Complete
+Core Rocketry: Complete
+NASA & Soviet Programs: Complete
+Recovery & SRBs: Complete
+Probe Cores: Complete
+Stations (ISS): Complete
+Science Expansion: Planned
+Electrical Expansion: Planned
+T9–T10 Speculative: Reserved
+
+================================================================================
+12. NEXT STEPS (NON-BINDING)
+- Expand science instruments by mission context
+- Finalize power generation branch
+- Define landing leg size progression
+- Audit remaining MH and ReStock+ parts
+- Investigate optional T9 SLS-era node
+- Introduce T10 speculative systems only if earned
+
+================================================================================
+13. — TECH TREE NODE POSITIONING & LAYOUT GUIDELINES
+
+This section explains how technology nodes are positioned within the KSP R&D view. These rules are intended to keep the tree readable, consistent, and easy to extend.
+
+NODE POSITION FORMAT
+pos = X,Y,Z
+
+X-AXIS — TIER PROGRESSION (HORIZONTAL)
+
+The X-axis represents chronological and capability progression. Moving right advances time and capability.
+
+Guideline values (approximate, not hard-locked):
+
+T0	-2568		Start node (First Flight)
+T1	-2400		Foundation branches
+T1.5	-2300		Intermediate convergence
+T2	-2200		Early expansion
+T2.5	-2100		Sputnik era (half-tier)
+T3	-2000		Early orbital capability
+T3.5	-1900		Vostok era (half-tier)
+T4	-1800		Mercury / docking era
+T4.5	-1700		Voskhod / early probes
+T5	-1600		Gemini / rendezvous
+T5.5	-1500		Soyuz era
+T6	-1400		Apollo / heavy lift
+T6.5	-1300		Salyut–Mir
+T7	-1200		Shuttle / reusability
+T8	-1100		ISS / Mk2 spaceplanes
+T9	-1000		Near-future systems
+T99	-800		Parking node
+
+
+Notes:
+- Values may shift slightly for readability.
+- Half-tier nodes should sit visually between full tiers.
+- Parking is intentionally far right for easy discovery.
+
+Y-AXIS — BRANCH LANES (VERTICAL)
+
+The Y-axis separates branches into horizontal “lanes.”
+Lower Y values appear higher on screen (inverted axis).
+
+These are soft bands, not exact requirements.
+
+UPPER / SCIENCE AREA
+	Y ≈ 900		Science & scanning
+	Y ≈ 950		Probe cores / guidance
+	Y ≈ 1000	Electronics & power
+
+MIDDLE AREA
+	Y ≈ 1100	Structural & manufacturing
+	Y ≈ 1199	Aircraft (primary starting lane)
+	Y ≈ 1200	Archer Aerospace rocketry
+
+LOWER / HEAVY SYSTEMS
+	Y ≈ 1250–1300	NASA crewed programs
+	Y ≈ 1350	Soviet crewed programs
+	Y ≈ 1450–1500	Recovery & separation
+	Y ≈ 1550	SRB progression
+	
+Z-AXIS (LAYERING / DRAW ORDER)
+
+The Z value controls draw order only, using negative numbers.
+Higher Z values are rendered above lower Z values and above
+dependency lines.
+
+Z decreases monotonically with tier depth (more negative = renders on top).
+
+Standard mapping:
+	T0		Z = 0
+	T1		Z = -1
+	T1.5		Z = -1.5
+	T2		Z = -2
+	T2.5		Z = -2.5
+	T3		Z = -3
+	T3.5		Z = -3.5
+	T4		Z = -4
+	T4.5		Z = -4.5
+	T5		Z = -5
+	T5.5		Z = -5.5
+	T6		Z = -6
+	T6.5		Z = -6.5
+	T7		Z = -7
+	T7.5		Z = -7.5
+	T8		Z = -8
+	T9		Z = -9
+	T10		Z = -10
+	T99		Z = -99
+
+The Z axis must never be used to imply progression,
+prerequisites, or balance.
+
+Notes:
+- Branches should stay vertically consistent across tiers.
+- NASA and Soviet lines are intentionally below the core Archer spine.
+- Support branches sit above core flight systems.
+- Visual clarity takes precedence over strict coordinates.
+
+DESIGN INTENT
+- Horizontal movement answers “when does this exist?”
+- Vertical placement answers “what kind of capability is this?”
+- Parallel branches should feel parallel on screen.
+- New branches should claim a vertical lane early and stay in it.
+
+================================================================================
+14. TECH NODE COSTS — DEVELOPMENT STATUS (LOCKED PROCESS)
+
+All technology node science costs in the Archer Aerospace tech tree are temporary placeholders during active development.
+
+CURRENT POLICY
+
+All node science costs are non-final
+
+Costs do not represent balance, pacing, or intended progression
+
+Costs may be inconsistent across tiers and branches
+
+No design intent should be inferred from current values
+
+For development and iteration purposes, all nodes should be treated as having an effective cost of 1.
+
+RATIONALE
+
+During tech tree construction, node costs create noise and friction that obscure the real work:
+
+Branch layout and visual clarity
+
+Part placement correctness
+
+Progression logic and dependency flow
+
+Identification of missing or misassigned parts
+
+Locking in costs too early makes refactors more expensive and encourages premature balance decisions.
+
+FUTURE FINALIZATION (DEFERRED)
+
+Science costs will be finalized only after the following are complete:
+
+All branches and nodes are stable
+
+Part assignments are audited and complete
+
+No orphaned or parking-node parts remain
+
+Gameplay testing validates intended progression feel
+
+Final costs will be applied globally and intentionally, using relative weighting between branches rather than strict tier-based scaling.
+
+IMPLEMENTATION GUIDANCE
+
+During development, nodes may be set to:
+
+cost = 1
+
+
+Temporary cost variance is acceptable but discouraged
+
+No tuning or balancing work should be done until explicitly scheduled
+
+DESIGN INTENT
+
+Node cost tuning is a polish phase, not a construction phase.
+Structure comes first. Balance comes last.
+
+================================================================================
+15. BRANCH COMPLETION STATUS & PINNED FUTURE FEATURES
+
+This section tracks the implementation status of all active branches and records intentionally deferred features for future exploration.
+Items listed here are not commitments, only design pins to preserve intent.
+
+15.1 BRANCH COMPLETION STATUS (AUTHORITATIVE)
+
+The following reflects the current implementation state as represented in AA_TechTree.cfg and active part-assignment patches.
+
+CORE FLIGHT & PROGRAM BRANCHES
+
+Aircraft
+Status: Complete (T0–T8)
+Notes: Aircraft progression is stable; RAPIER intentionally deferred to T9–T10.
+
+Archer Aerospace Rocketry (1.25m Core)
+Status: Complete
+Notes: Continuous backbone; no planned restructuring.
+
+NASA Crewed Program
+Status: Complete
+Notes: Converges at T8; heavy-lift focus intact.
+
+Soviet Crewed Program
+Status: Complete
+Notes: Half-tier structure validated; reduced node density intentional.
+
+SUPPORT & CAPABILITY BRANCHES
+
+Science
+Status: Partially Implemented
+Notes: Early instruments placed; expansion deferred.
+
+Electrical / Power (Generation Only)
+Status: Partially Implemented
+Notes: Batteries handled in program/core nodes by design.
+
+Probe & Guidance
+Status: Complete
+Notes: OKTO → HECS → RC line stable.
+
+Structural (Non-Station)
+Status: Complete
+
+Recovery Systems
+Status: Complete
+
+Separation Systems
+Status: Complete
+
+Solid Rocket Boosters (SRB Line)
+Status: Complete
+Notes: Dedicated progression; specialty SRBs removed.
+
+Rovers / Ground Systems
+Status: Partially Implemented
+Notes: Mobility early; infrastructure deferred.
+
+Stations & Orbital Infrastructure
+Status: Complete (ISS as first true infrastructure)
+Notes: Includes Gigantor XL solar at ISS node.
+
+SPECIAL / META
+
+Parking Node (T99)
+Status: Complete
+Notes: Intentional development feature; not a failure state.
+
+15.2 PINNED FUTURE FEATURES (NOT IMPLEMENTED)
+
+The following ideas have been discussed and intentionally deferred.
+They are recorded here to prevent loss of design intent.
+
+Catch-All / Unassigned Node (Future)
+Concept:
+A visible node aligned with T0 on the X-axis, positioned above the primary lanes on the Y-axis, acting as a visual flag for parts added by mods that lack a proper node assignment.
+
+Purpose:
+
+Surface missing coverage immediately
+
+Prevent silent misplacement into Parking
+
+Aid future audits
+
+Status: Pinned — Not Implemented
+
+Module-Level Feature Gating via MM (Future)
+Concept:
+Use ModuleManager patches to disable or limit specific part modules unless corresponding tech nodes are unlocked (similar in spirit to MechJeb handling).
+
+Purpose:
+
+Fine-grained capability control
+
+Preserve part availability while gating functionality
+
+Status: Pinned — Not Implemented
+
+Additional Deferred Concepts
+Any features discussed but not present in code should be treated as non-binding design exploration until explicitly promoted to an implementation section.
+
+================================================================================
+16. MOD DEPENDENCY & SCOPE ASSUMPTIONS (LOCKED)
+
+Archer Aerospace is designed as a personal, single-player tech tree with explicit assumptions about part availability.
+
+DESIGN ASSUMPTION
+
+The tech tree defines the parts it supports
+
+All required parts are expected to exist in the environment
+
+The tree is not intended for third-party distribution at this time
+
+IMPLICATIONS
+
+No mod dependency checks are required
+
+No conditional MM logic for missing mods is needed
+
+Nodes may safely reference parts without fallback handling
+
+Simplicity and determinism are prioritized over portability
+
+DESIGN INTENT
+
+This project optimizes for:
+
+Fast iteration
+
+Clear intent
+
+Minimal defensive logic
+
+If public release or redistribution is ever considered, dependency handling may be revisited as a separate design phase.
+================================================================================
+END OF MASTER REFERENCE DOCUMENT
+
+
+================================================================================
+
+17. APPENDIX — IMPLEMENTED PART ASSIGNMENTS (AUTOGENERATED)
+
+Source: TechTree.zip Tier assignment patches (AA_Parts_T0–T10.cfg)
+
+Generated: 2026-01-08
+
+
+Assigned (non-parking) parts: 434
+
+Parts still in Parking / not yet implemented (NYI): 358
+
+
+Node → Parts (internal part names)
+
+-------------------------------------------------------------------------------
+
+
+AA_0_Aircraft_First_Flight  (14 parts)
+
+  - evaChute, GearFixed, GearFree, Mark2Cockpit, miniFuselage, miniIntake, miniJetEngine,
+  - Mk1FuselageStructural, noseConeAdapter, StandardCtrlSrf, standardNoseCone, structuralWing4,
+  - wingConnector5, winglet3
+
+AA_10_Aircraft_AdvancedSSTO  (1 parts)
+
+  - RAPIER
+
+AA_10_Rocket_NuclearPropulsion  (2 parts)
+
+  - nuclearEngine, restock-engine-cherenkov
+
+AA_1_Aircraft_Expansion  (9 parts)
+
+  - airplaneTail, Mark1Cockpit, MK1Fuselage, navLight1, SmallGearBay, structuralWing3, sweptWing, tailfin,
+  - wingConnector2
+
+AA_1_Electrical_Basic_Electronics  (8 parts)
+
+  - batteryPack, fuelLine, longAntenna, monopropMiniSphere, rcsTankMini, ReleaseValve, restock-apu-radial-1,
+  - SurfAntenna
+
+AA_1_Electrical_Radar_Technology  (1 parts)
+
+  - scansat-radar-poseidon-3b-1
+
+AA_1_Science_Basic  (1 parts)
+
+  - sensorThermometer
+
+AA_1_Structural_Industrial_Components  (8 parts)
+
+  - adapterSmallMiniShort, EquiTriangle0, Panel0, structuralMiniNode, strutConnector, strutCube, strutOcto,
+  - Triangle0
+
+AA_2_Aircraft_Design  (9 parts)
+
+  - ConformalStorageUnit, delta_small, elevon2, elevon3, structuralWing, structuralWing2, wingConnector,
+  - wingConnector3, wingConnector4
+
+AA_2_Communication_Antennas  (2 parts)
+
+  - HighGainAntenna5, restock-relay-radial-2
+
+AA_2_Electrical_Fixed_Solar_Foundations  (3 parts)
+
+  - LgRadialSolarPanel, restock-reactionwheel-radial-1, solarPanels5
+
+AA_2_Recovery_Separation_And_Recovery  (8 parts)
+
+  - Decoupler_0, HeatShield0, parachuteRadial, parachuteSingle, radialDecoupler, restock-fairing-base-0625-1,
+  - Separator_0, sepMotor1
+
+AA_2_Rocket_Sounding_Rockets  (13 parts)
+
+  - basicFin, liquidEngineMini_v2, miniFuelTank, Mite, probeCoreCube, restock-engine-torch, restock-fuel-
+  - tank-0625-1, restock-fuel-tank-0625-2, restock-fuel-tank-0625-3, restock-fuel-tank-0625-5, restock-
+  - fueltank-sphere-0625-1, Shrimp, solidBooster_sm_v2
+
+AA_2_Rover_Rover_Systems  (8 parts)
+
+  - evaRepairKit, restock-wheel-1-T, RobotArmScanner_S1, roverBody, roverWheel1, roverWheel2, seatExternalCmd,
+  - smallCargoContainer
+
+AA_2_Science_Applied  (4 parts)
+
+  - restock-sciencebox-stack-1, scansat-exomars-1, ScienceBox, sensorBarometer
+
+AA_2_Soviet_Fellow_Traveler  (9 parts)
+
+  - fuelTank1-2, LiquidEngineRK-7, LiquidEngineRV-1, probeCoreSphere_v2, restock-fairing-base-1875-1, restock-
+  - fueltank-1875-soyuz-1, Size1p5_Strut_Decoupler, Size1p5_Tank_01, Size1p5_Tank_02
+
+AA_2_Structural_Engineering  (10 parts)
+
+  - adapterSmallMiniTall, EquiTriangle1, Panel1, restock-truss-3, restock-truss-adapter-0625-1, restock-truss-
+  - hub-1, Triangle1, trussAdapter, trussPiece1x, trussPiece3x
+
+AA_3_Aircraft_Subsonic_Jets  (12 parts)
+
+  - airScoop, CanardController, CircularIntake, deltaWing, elevon5, JetEngine, MK1CrewCabin, nacelleBody,
+  - smallCtrlSrf, smallHardpoint, sweptWing1, sweptWing2
+
+AA_3_Electrical_Early_Orbital_Power  (4 parts)
+
+  - DeployedSolarPanel, ksp_r_largeBatteryPack, solarPanels3, solarPanels4
+
+AA_3_Recovery_Small_Recovery_Systems  (6 parts)
+
+  - HeatShield1, HeatShield1p5, miniLandingLeg, parachuteLarge, radialDrogue, restock-heatshield-1875-1
+
+AA_3_Rocket_Orbital_Rocketry  (6 parts)
+
+  - EnginePlate5, liquidEngine3_v2, radialRCSTank, RCSFuelTank, restock-engine-125-pug, restock-
+  - engineplate-125-2
+
+AA_3_Rocket_Small_Rockets  (13 parts)
+
+  - fairingSize1, fuelTank, fuelTank_long, fuelTankSmall, liquidEngine2_v2, liquidEngine_v2, noseCone,
+  - pointyNoseConeA, RCSblock_01_small, RCSLinearSmall, restock-engine-125-valiant, restock-engine-les-2,
+  - Size1to0ServiceModule
+
+AA_3_Rover_FieldOps  (5 parts)
+
+  - groundLight1, groundLight2, MiniDrill, RadialOreTank, SurfaceScanner
+
+AA_3_Science_FieldScience  (5 parts)
+
+  - DeployedCentralStation, DeployedSeismicSensor, DeployedWeatherStn, evaScienceKit, sensorAccelerometer
+
+AA_3_Soviet_Vostok  (2 parts)
+
+  - kv1Pod, Size1p5_Size1_Adapter_02
+
+AA_3_SRB_Basic  (2 parts)
+
+  - solidBooster1-1, solidBooster_v2
+
+AA_4_Aircraft_Supersonic_Jets  (4 parts)
+
+  - airplaneTailB, GearMedium, structuralPylon, turboJet
+
+AA_4_Communication_DTS_Systems  (2 parts)
+
+  - mediumDishAntenna, restock-antenna-stack-2
+
+AA_4_Electrical_Advanced_Fixed_Generation  (2 parts)
+
+  - FuelCell, solarPanelOX10L
+
+AA_4_NASA_Docking  (5 parts)
+
+  - dockingPort2, dockingPort3, dockingPortLarge, LaunchEscapeSystem, sspx-docking-125-1
+
+AA_4_NASA_Mercury  (13 parts)
+
+  - engineLargeSkipper_v2, largeAdapter, largeAdapter2, liquidEngine2-2_v2, LiquidEngineLV-TX87, mk1pod_v2,
+  - RCSTank1-2, restock-pod-sphere-1, restock-service-module-125-625-1, rocketNoseCone_v3, Rockomax16_BW,
+  - Rockomax8BW, Size1p5_Size2_Adapter_01
+
+AA_4_Probe_Basic_Probe_Cores  (2 parts)
+
+  - probeCoreOcto2_v2, probeCoreOcto_v2
+
+AA_4_Recovery_Separation_Systems  (11 parts)
+
+  - Decoupler_1, Decoupler_1p5, fairingSize1p5, landingLeg1, radialDecoupler2, restock-decoupler-1875-1,
+  - restock-decoupler-1875-truss-1, restock-decoupler-radial-tiny-1, restock-separator-1875-1, Separator_1,
+  - Separator_1p5
+
+AA_4_Science_OrbitalSurvey  (4 parts)
+
+  - scansat-multi-modis-1, scansat-recon-ikonos-1, scansat-resources-crism-1, sensorAtmosphere
+
+AA_4_Soviet_Voskhod  (5 parts)
+
+  - InflatableAirlock, kv2Pod, restock-fueltank-1875-4, restock-nosecone-1875-2, Size_1_5_Cone
+
+AA_4_SRB_Medium  (2 parts)
+
+  - MassiveBooster, restock-srb-castor-1
+
+AA_5_Aircraft_High_Altitude_Flight  (4 parts)
+
+  - airbrake1, IntakeRadialLong, MK1IntakeFuselage, ramAirIntake
+
+AA_5_Communication_Relay_Systems  (1 parts)
+
+  - RelayAntenna5
+
+AA_5_Electrical_Deployable_Power_Systems  (4 parts)
+
+  - FuelCellArray, solarPanels1, solarPanels2, solarPanelSP10L
+
+AA_5_NASA_Gemini  (15 parts)
+
+  - adapterLargeSmallBi, adapterSize2-Size1, adapterSize2-Size1Slant, batteryBankLarge, LiquidEngineLV-T91,
+  - liquidEngineMainsail_v2, radialLiquidEngine1-2, restock-airlock-1, restock-fueltank-sphere-25-1, restock-
+  - mk2-pod, restock-pod-sphere-2, Rockomax32_BW, Rockomax64_BW, ServiceModule18, stackTriCoupler_v2
+
+AA_5_Recovery_Large_Recovery_Systems  (3 parts)
+
+  - HeatShield2, landingLeg1-2, parachuteDrogue
+
+AA_5_Recovery_Large_Separation_Systems  (4 parts)
+
+  - Decoupler_2, radialDecoupler1-2, Separator_2, stackSeparatorBig
+
+AA_5_Rocket_Advanced_Rocketry  (14 parts)
+
+  - batteryBank, EnginePlate1p5, evaCylinder, evaJetpack, landerCabinSmall, microEngine_v2,
+  - radialEngineMini_v2, restock-engineplate-1875-1, restock-engineplate-25-1, ServiceBay_125_v2,
+  - smallRadialEngine_v2, sspx-core-125-1, sspx-cupola-125-1, vernierEngine
+
+AA_5_Rover_MidSystems  (2 parts)
+
+  - RobotArmScanner_S2, roverWheelM1-F
+
+AA_5_Science_AdvancedSurvey  (5 parts)
+
+  - scansat-multi-abi-1, scansat-radar-seasat-1, scansat-recon-worldview-3-1, scansat-resources-mise-1,
+  - scansat-sar-paz-1
+
+AA_5_Soviet_Soyuz  (12 parts)
+
+  - kv3Pod, LiquidEngineRE-I2, Mk2Pod, restock-battery-1875-1, restock-fueltank-1875-1, restock-
+  - fueltank-1875-2, restock-fueltank-1875-3, restock-fueltank-sphere-1875-1, restock-service-module-1875-1,
+  - Size1p5_Monoprop, Size1p5_Tank_03, Size1p5_Tank_04
+
+AA_5_SRB_Heavy  (1 parts)
+
+  - Thoroughbred
+
+AA_6_Aircraft_Hypersonic_Flight  (3 parts)
+
+  - radialEngineBody, shockConeIntake, turboFanEngine
+
+AA_6_Communication_DeepSpace_Systems  (2 parts)
+
+  - commDish, DeployedSatDish
+
+AA_6_Electrical_Nuclear_Power_Systems  (2 parts)
+
+  - DeployedRTG, rtg
+
+AA_6_NASA_Apollo  (24 parts)
+
+  - CargoStorageUnit, fairingSize2, fairingSize3, fairingSize4, LiquidEngineKE-1, MEMLander, mk1-3pod,
+  - restock-fairing-base-5-1, restock-fueltank-5-1, restock-fueltank-5-2, restock-fueltank-5-3, restock-
+  - fueltank-5-4, restock-fueltank-adapter-375-5-1, restock-fueltank-saturn-engine-1, restock-pod-sphere-3,
+  - ServiceBay_250_v2, ServiceModule25, Size3_Size4_Adapter_01, Size3AdvancedEngine, Size4_EngineAdapter_01,
+  - Size4_Tank_01, Size4_Tank_02, Size4_Tank_03, Size4_Tank_04
+
+AA_6_Probe_Advanced_Probe_Cores  (1 parts)
+
+  - probeCoreHex_v2
+
+AA_6_Recovery_Heavy_Recovery_Systems  (2 parts)
+
+  - HeatShield3, InflatableHeatShield
+
+AA_6_Recovery_Heavy_Separation_Systems  (6 parts)
+
+  - Decoupler_3, Decoupler_4, restock-decoupler-5-1, restock-separator-5-1, Separator_3, Separator_4
+
+AA_6_Rocket_Heavy_Rocketry  (19 parts)
+
+  - cargoContainer, EnginePlate3, EnginePlate4, linearRcs, RCSBlock, restock-docking-375-1, restock-engine-
+  - boar, restock-engineplate-375-1, restock-engineplate-5-1, restock-fuel-tank-375-4, restock-fuel-tank-
+  - rcs-375-1, restock-fueltank-sphere-375-1, restock-structural-tube-375-1, rocketNoseConeSize3, Size2LFB_v2,
+  - Size3MediumTank, Size3SmallTank, Size3To2Adapter_v2, Tube3
+
+AA_6_Science_ScansatAdvanced  (5 parts)
+
+  - Magnetometer, scansat-multi-msi-1, scansat-resources-hyperion-1, scansat-sar-radarsat-2-1, scansat-sar-
+  - tandem-l-1
+
+AA_6_Soviet_Salyut_Mir  (14 parts)
+
+  - sspx-adapter-1875-125-1, sspx-adapter-1875-125-2, sspx-attach-1875-1, sspx-core-1875-1, sspx-
+  - cupola-1875-1, sspx-habitation-1875-1, sspx-habitation-1875-2, sspx-hub-1875-1, sspx-science-1875-1, sspx-
+  - tube-1875-1, sspx-tube-1875-2, sspx-tube-1875-3, sspx-tube-1875-angled-1, sspx-utility-1875-1
+
+AA_6_SRB_Super_Heavy  (1 parts)
+
+  - Clydesdale
+
+AA_7_Aircraft_Heavy_Lift_Jets  (6 parts)
+
+  - airlinerCtrlSrf, airlinerMainWing, airlinerTailFin, GearExtraLarge, GearLarge, turboFanSize2
+
+AA_7_Communication_Advanced_Relay  (3 parts)
+
+  - HighGainAntenna, RelayAntenna50, restock-antenna-stack-3
+
+AA_7_NASA_Shuttle  (17 parts)
+
+  - adapterMk3-Mk2, adapterSize3-Mk3, mk2DockingPort, mk3CargoBayL, mk3CargoBayM, mk3CargoBayS,
+  - mk3Cockpit_Shuttle, mk3FuselageLF_100, mk3FuselageLFO_100, mk3FuselageLFO_25, mk3FuselageLFO_50,
+  - mk3FuselageMONO, omsEngine, Pollux, restock-nosecone-375-1, Size3LargeTank, SSME
+
+AA_7_Probe_Large_Probe_Cores  (1 parts)
+
+  - HECS2_ProbeCore
+
+AA_7_Rocket_Specialized_Rocketry  (2 parts)
+
+  - dockingPort1, dockingPortLateral
+
+AA_7_Rover_RuggedSystems  (3 parts)
+
+  - mk2LanderCabin_v2, RobotArmScanner_S3, wheelMed
+
+AA_7_Science_ShuttleMaterials  (3 parts)
+
+  - DeployedIONExp, restock-materialbay-radial-1, science_module
+
+AA_8_Aircraft_Mk2_Spaceplanes  (15 parts)
+
+  - adapterSize2-Mk2, mk2_1m_AdapterLong, mk2_1m_Bicoupler, mk2CargoBayL, mk2CargoBayS, mk2Cockpit_Inline,
+  - mk2Cockpit_Standard, mk2CrewCabin, mk2DroneCore, mk2Fuselage, mk2FuselageLongLFO, mk2FuselageShortLFO,
+  - mk2FuselageShortLiquid, mk2FuselageShortMono, mk2SpacePlaneAdapter
+
+AA_8_Communication_UltraDeepSpace  (1 parts)
+
+  - RelayAntenna100
+
+AA_8_NASA_SLS  (3 parts)
+
+  - Size3EngineCluster, solarPanelOX10C, solarPanelSP10C
+
+AA_8_Science_HighEndScience  (3 parts)
+
+  - InfraredTelescope, scansat-recon-kh11-1, sensorGravimeter
+
+AA_8_Station_International_Space_Station  (9 parts)
+
+  - cupola, Large_Crewed_Lab, largeSolarPanel, sspx-adapter-25-1875-1, sspx-airlock-25-1, sspx-core-25-1,
+  - sspx-habitation-25-1, sspx-observation-25-1, stationHub
+
+AA_9_Probe_Remote_Guidance_Systems  (3 parts)
+
+  - probeStackLarge, probeStackSmall, restock-drone-core-375-1
+
+AA_9_Rocket_ExperimentalSystems  (3 parts)
+
+  - GrapplingDevice, smallClaw, toroidalAerospike
+
+AA_9_Science_ExoticResearch  (3 parts)
+
+  - DeployedGoExOb, GooExperiment, restock-goocanister-625-1

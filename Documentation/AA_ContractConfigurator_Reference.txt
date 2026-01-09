@@ -1,0 +1,177 @@
+# Archer Aerospace – Launch Services Contracts
+
+This contract pack adds commercial launch services provided by Archer Aerospace, allowing players to outsource satellite deployments instead of flying every mission themselves.
+
+These contracts are designed for role-play and realism-leaning career games, similar to NASA contracting commercial launch providers.
+
+---
+
+## WHAT THIS PACK ADDS
+
+Single-Satellite Launch Services
+
+* Delivery of one unmanned satellite to:
+
+  * 0° inclination (equatorial)
+  * 45° inclination
+  * 90° inclination (polar)
+* Fixed circular orbit at 300 km
+* 30-day lead time
+* Satellite is delivered and transferred to player control on completion
+
+3-Satellite Constellation Launch Services
+
+* Deployment of three identical satellites
+* All satellites:
+
+  * Share the same orbit
+  * Are evenly spaced 120° apart
+* Available at:
+
+  * 0° / 45° / 90° inclination
+* 42-day lead time
+* All satellites are transferred to the player on completion
+
+---
+
+## COSTS & GAMEPLAY BALANCE
+
+* Contracts use negative funds (you pay Archer Aerospace)
+* Costs are based on the sticker cost of an equivalent launch vehicle
+* Reusability savings are not passed to the player (realistic commercial pricing)
+* Prestige is locked to Trivial to prevent reward scaling
+
+Default pricing:
+
+Single satellite launch
+
+* Accept: 1,700
+* Complete: 15,400
+* Total: 17,100
+
+3-satellite constellation launch
+
+* Accept: 5,100
+* Complete: 46,200
+* Total: 51,300
+
+---
+
+## FOLDER LAYOUT
+
+Expected directory structure:
+
+GameData/
+Archer Areospace/
+Agents.cfg
+Contracts/
+Bodkin_LaunchService.cfg
+Contracts/VesselTemplates/
+AS-Test-K.craft
+Flags/
+
+---
+
+## HOW TO MODIFY THE CONTRACTS
+
+Change the satellite being launched:
+
+Replace the craftURL line in the contract:
+
+craftURL = Archer Areospace/Contracts/VesselTemplates/AS-Test-K.craft
+
+with another .craft file placed in the same folder.
+
+Important:
+Craft files should only contain stock modules unless you intentionally require other mods.
+
+---
+
+Change orbit altitude:
+
+Modify the SMA value in the ORBIT block:
+
+SMA = 900000
+
+Kerbin radius is 600,000 m.
+Orbit altitude = SMA minus 600,000.
+
+Example:
+500 km orbit = SMA = 1100000
+
+---
+
+Change inclination:
+
+Each contract is fixed to one inclination:
+
+INC = 0   (equatorial)
+INC = 45  (mid-inclination)
+INC = 90  (polar)
+
+---
+
+Change lead time:
+
+Edit the Duration parameter:
+
+duration = 30d
+
+Examples:
+14d  – fast commercial cadence
+60d  – realistic manifest delay
+120d – development or first-article launch
+
+---
+
+Change pricing:
+
+Negative values deduct funds from the player:
+
+advanceFunds = -1700
+rewardFunds  = -15400
+
+Advance is paid on acceptance.
+Reward is paid on completion.
+
+---
+
+## DEPENDENCIES
+
+Required:
+
+* Kerbal Space Program
+* Contract Configurator
+
+Recommended:
+
+* None
+
+---
+
+## DESIGN NOTES
+
+* These contracts represent launch services, not part unlocks
+* Intended for realism-leaning career play
+* Future expansions may include:
+
+  * Tech-tree-gated services
+  * Reusable launch discounts
+  * Interplanetary delivery
+  * Autonomous station resupply
+
+---
+
+## CREDITS
+
+Contract logic and design: Archer Aerospace
+Built on Contract Configurator
+Inspired by modern commercial spaceflight operations
+
+---
+
+If you want, I can also provide:
+
+* A “developer notes” TXT
+* A changelog template
+* Or a license stub for distribution

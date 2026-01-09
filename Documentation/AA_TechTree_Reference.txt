@@ -780,7 +780,7 @@ AA_4_Electrical_Advanced_Fixed_Generation  (2 parts)
 
   - FuelCell, solarPanelOX10L
 
-AA_4_NASA_Docking  (5 parts)
+AA_4_Rocket_Docking  (5 parts)
 
   - dockingPort2, dockingPort3, dockingPortLarge, LaunchEscapeSystem, sspx-docking-125-1
 

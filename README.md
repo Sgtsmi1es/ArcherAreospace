@@ -19,15 +19,25 @@ Archer Aerospace replaces the stock KSP tech tree with a custom progression syst
 ## Installation
 
 1. Download the latest release or clone this repository
-2. Place the entire `ArcherAreospace` folder into your KSP `GameData` directory
-3. Ensure you have [ModuleManager](https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/) installed (required)
+2. Install all required dependencies (see below)
+3. Place the entire `ArcherAreospace` folder into your KSP `GameData` directory
+4. Ensure you have [ModuleManager](https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/) installed
 
-### Optional Dependencies
+### Required Dependencies
 
-The mod includes support for the following optional mods (parts will be assigned to tech nodes if these mods are installed):
+The following mods and DLC are required for full functionality:
 
+- **ModuleManager** - Core dependency for patch system
 - **Station Parts Expansion Redux** - Full integration across T3-T10 for station modules
 - **ReStock+** - Additional part variants and visual improvements
+- **SCANsat** - Mapping and scanning functionality
+- **Kerbal Konstructs** - Required for custom space center (Archer Areospace Proving Grounds)
+- **Kerbinside Remastered** - Additional launch sites and infrastructure
+- **Contract Configurator** - Required for custom contracts
+- **Kramax Autopilot** - Autopilot functionality
+
+### Required DLC
+
 - **Making History DLC** - Historical parts and mission support
 - **Serenity DLC** - Science and exploration parts
 
@@ -94,12 +104,9 @@ ArcherAreospace/
 
 This mod uses ModuleManager patches and should be compatible with most part mods. Parts from supported mods (Station Parts Expansion Redux, ReStock+, etc.) will automatically be assigned to appropriate tech nodes.
 
-### Known Compatible Mods
+### Additional Compatible Mods
 
-- Station Parts Expansion Redux (full integration)
-- ReStock+ (partial integration)
-- MechJeb2 (unlock patches included)
-- SCANsat (visual scan cockpit patches included)
+- **MechJeb2** - Unlock patches included for tech tree integration
 
 ## Documentation
 

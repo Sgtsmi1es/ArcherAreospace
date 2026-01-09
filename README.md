@@ -29,7 +29,7 @@ The following mods and DLC are required for full functionality:
 
 - **ModuleManager** - Core dependency for patch system
 - **Station Parts Expansion Redux** - Full integration across T3-T10 for station modules
-- **ReStock+** - Additional part variants and visual improvements
+- **ReStock+** - Additional part variants, visual improvements, and structural parts (adapters, service bays, attachment points)
 - **SCANsat** - Mapping and scanning functionality
 - **Kerbal Konstructs** - Required for custom space center (Archer Areospace Proving Grounds)
 - **Kerbinside Remastered** - Additional launch sites and infrastructure
